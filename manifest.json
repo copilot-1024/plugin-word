@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Docx Converter",
+  "version": "1.0",
+  "permissions": ["clipboardWrite", "clipboardRead", "activeTab", "contextMenus", "downloads", "storage"],
+  "icons": {
+    "16": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["html-to-docx.js","content_script.js"]
+  }]
+}
